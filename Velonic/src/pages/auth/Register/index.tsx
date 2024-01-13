@@ -9,8 +9,8 @@ import useRegister from './useRegister'
 import { VerticalForm, FormInput, PageBreadcrumb } from '@/components'
 
 interface UserData {
-	fullname: string
-	email: string
+	UserName: string
+	UserEmail: string
 	UserPassword: string
 }
 const BottomLink = () => {
@@ -38,8 +38,8 @@ const Register = () => {
 	 */
 	const schemaResolver = yupResolver(
 		yup.object().shape({
-			fullname: yup.string().required('Please enter Fullname'),
-			email: yup
+			UserName: yup.string().required('Please enter Fullname'),
+			UserEmail: yup
 				.string()
 				.required('Please enter Email')
 				.email('Please enter valid Email'),

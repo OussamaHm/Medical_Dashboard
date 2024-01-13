@@ -170,6 +170,7 @@ type TopbarProps = {
 	navOpen?: boolean
 }
 const Topbar = ({ toggleMenu, navOpen }: TopbarProps) => {
+	const id = String(localStorage.getItem('currentUserId'));
 	const { sideBarType } = useThemeCustomizer()
 	const { width } = useViewport()
 
@@ -329,7 +330,7 @@ const Topbar = ({ toggleMenu, navOpen }: TopbarProps) => {
 							<ProfileDropdown
 								menuItems={profileMenus}
 								userImage={profilePic}
-								username="Thomson"
+								username= {id}
 							/>
 						</li>
 					</ul>

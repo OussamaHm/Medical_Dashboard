@@ -1,10 +1,12 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 
+
 type User = {
-	id: number
+	PatId: number
 	UserName: string
 	UserPassword: string
+	UserEmail: string
 	UserType: number
 	token: string
 }
@@ -21,7 +23,7 @@ async function fetchUserList() {
     const response = await axios.get('http://localhost:49337/api/Utilisateurs');
     // Assuming the API response is an array of users with the specified attributes
     users = response.data.map((user: any) => ({
-      id: user.id,
+		PatId: user.PatId,
       UserName: user.UserName,
       UserPassword: user.UserPassword,
       UserType: user.UserType,
@@ -34,6 +36,7 @@ async function fetchUserList() {
 
 export default async function configureFakeBackend() {
 	await fetchUserList();
+	console.log('Users : ' , users)
 	mock.onPost('/login').reply(function (config) {
 		return new Promise(function (resolve, reject) {
 			setTimeout(function () {
@@ -48,6 +51,8 @@ export default async function configureFakeBackend() {
 				if (filteredUsers.length) {
 					// if login details are valid return user details and fake jwt token
 					const user = filteredUsers[0]
+					console.error(String(user.PatId));
+                    localStorage.setItem('currentUserId', String(user.PatId));
 					resolve([200, user])
 				} else {
 					// else return error
@@ -58,26 +63,27 @@ export default async function configureFakeBackend() {
 	})
 
 	mock.onPost('/register').reply(function (config) {
-		return new Promise(function (resolve, reject) {
-			setTimeout(function () {
-				// get parameters from post request
-				const params = JSON.parse(config.data)
+        return new Promise(function (resolve, reject) {
+            setTimeout(async function () {
+                // get parameters from post request
+                const params = JSON.parse(config.data)
 
-				// add new users
+                // add new users
 
-				const newUser: User = {
-					id: users.length + 1,
-					UserName: params.UserName,
-					UserPassword: params.UserPassword,
-					UserType: 3,
-					token: TOKEN,
-				}
-				users.push(newUser)
+                const newUser: User = {
+					PatId: users.length + 1,
+                    UserName: params.UserName,
+					UserEmail: params.UserEmail,
+                    UserPassword: params.UserPassword,
+                    UserType: 3,
+                    token: TOKEN,
+                }    
+				await axios.post('http://localhost:49337/api/Utilisateurs', newUser);
 
-				resolve([200, newUser])
-			}, 1000)
-		})
-	})
+                resolve([200, newUser])
+            }, 1000)
+        })
+    })
 
 	mock.onPost('/forget-password').reply(function (config) {
 		return new Promise(function (resolve, reject) {

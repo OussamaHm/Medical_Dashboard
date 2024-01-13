@@ -12,6 +12,7 @@ import { PageBreadcrumb } from '@/components'
 import { chatMessages, statistics } from './data'
 
 const Dashboard = () => {
+
 	return (
 		<>
 			<PageBreadcrumb title="Welcome!" subName="Dashboards" />

@@ -11,20 +11,20 @@ export default function useRegister() {
 	const { isAuthenticated } = useAuthContext()
 
 	const register = async ({
-		name,
-		email,
-		password1,
+		UserName,
+		UserEmail,
+		UserPassword,
 	}: {
-		name: string
-		email: string
-		password1: string
+		UserName: string
+		UserEmail: string
+		UserPassword: string
 	}) => {
 		setLoading(true)
 		try {
 			const { data } = await authApi.register({
-				name,
-				email,
-				password: password1,
+				UserName,
+				UserEmail,
+				UserPassword: UserPassword,
 			})
 			if (data?.id) {
 				navigate('/account/login')
