@@ -74,7 +74,7 @@ export default async function configureFakeBackend() {
 					PatId: users.length + 1,
                     UserName: params.UserName,
 					UserEmail: params.UserEmail,
-                    UserPassword: params.UserPassword,
+                    UserPassword: params.UserPassword,	
                     UserType: 3,
                     token: TOKEN,
                 }    
