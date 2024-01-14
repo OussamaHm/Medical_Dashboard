@@ -20,7 +20,7 @@ let users: User[] = [];
 
 async function fetchUserList() {
   try {
-    const response = await axios.get('http://localhost:49337/api/Utilisateurs');
+    const response = await axios.get('http://localhost:45490/api/Utilisateurs');
     // Assuming the API response is an array of users with the specified attributes
     users = response.data.map((user: any) => ({
 		PatId: user.PatId,
@@ -78,7 +78,7 @@ export default async function configureFakeBackend() {
                     UserType: 3,
                     token: TOKEN,
                 }    
-				await axios.post('http://localhost:49337/api/Utilisateurs', newUser);
+				await axios.post('http://localhost:45490/api/Utilisateurs', newUser);
 
                 resolve([200, newUser])
             }, 1000)
