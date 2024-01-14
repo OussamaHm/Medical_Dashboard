@@ -133,7 +133,8 @@ namespace Backend_Medical.Models
                     .HasColumnName("rdv_id");
 
                 entity.Property(e => e.Daate)
-                    .HasColumnType("date")
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
                     .HasColumnName("daate");
 
                 entity.Property(e => e.DocId).HasColumnName("doc_id");
