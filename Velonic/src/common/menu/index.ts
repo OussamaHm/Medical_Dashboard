@@ -1,18 +1,22 @@
 import {
 	HORIZONTAL_MENU_ITEMS,
 	MENU_ITEMS,
+	HORIZONTAL_MENU_ITEMS2,
+	MENU_ITEMS2,
 	MenuItemTypes,
 } from '@/constants/menu'
 const getMenuItems = () => {
-	// NOTE - You can fetch from server and return here as well
-	return MENU_ITEMS
+    const id = String(localStorage.getItem('currentUserId'));
+	if(id == "0" || id == "1" || id == "2" || id == "3" || id == "4" || id == "5" || id == "6") { return MENU_ITEMS }
+	else return MENU_ITEMS2 
 }
 
 const getHorizontalMenuItems = () => {
-	// NOTE - You can fetch from server and return here as well
-	return HORIZONTAL_MENU_ITEMS
+	const id = String(localStorage.getItem('currentUserId'));
+	if(id == "0" || id == "1" || id == "2" || id == "3" || id == "4" || id == "5" || id == "6")  { return HORIZONTAL_MENU_ITEMS }
+	else  return HORIZONTAL_MENU_ITEMS2 
 }
-
+ 
 const findAllParent = (
 	menuItems: MenuItemTypes[],
 	menuItem: MenuItemTypes

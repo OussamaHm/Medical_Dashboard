@@ -54,6 +54,9 @@ const Tooltips = React.lazy(() => import('../pages/ui/Tooltips'))
 const Typography = React.lazy(() => import('../pages/ui/Typography'))
 const Utilities = React.lazy(() => import('../pages/ui/Utilities'))
 
+
+
+
 // // extended ui
 const Portlets = React.lazy(() => import('../pages/extended/Portlets'))
 const RangeSlider = React.lazy(() => import('../pages/extended/RangeSlider'))
@@ -88,8 +91,12 @@ const ImageCrop = React.lazy(() => import('../pages/ui/forms/ImageCrop'))
 const Editable = React.lazy(() => import('../pages/ui/forms/Editable'))
 
 // // tables
-const BasicTables = React.lazy(() => import('../pages/ui/tables/BasicTables'))
-const DataTables = React.lazy(() => import('../pages/ui/tables/DataTables'))
+const PatTables = React.lazy(() => import('../pages/ui/tables/PatientsTable/PatTables'))
+const DossTables = React.lazy(() => import('../pages/ui/tables/DossierMedTable/DossierMed'))
+const GestionHorTables = React.lazy(() => import('../pages/ui/tables/GestionHoraireTable/GestionHoraire'))
+const HistoriqueTables = React.lazy(() => import('../pages/ui/tables/HistoriqueTable/Historique'))
+const RendezVTables = React.lazy(() => import('../pages/ui/tables/RendezVTable/RendezV'))
+const RessourceTables = React.lazy(() => import('../pages/ui/tables/RessourcesTable/Ressource'))
 
 // // maps
 const GoogleMaps = React.lazy(() => import('../pages/ui/maps/GoogleMaps'))
@@ -492,17 +499,41 @@ const uiRoutes: RoutesProps = {
 			name: 'Tables',
 			children: [
 				{
-					path: '/ui/tables/basic-tables',
-					name: 'Basic Tables',
-					element: <BasicTables />,
+					path: '/ui/tables/patients',
+					name: 'Patients Tables',
+					element: <PatTables />,
 					route: PrivateRoute,
 				},
 				{
-					path: '/ui/tables/data-tables',
-					name: 'Data Tables',
-					element: <DataTables />,
+					path: '/ui/tables/dossiermed',
+					name: 'DossierMed Tables',
+					element: <DossTables />,
 					route: PrivateRoute,
 				},
+				{
+					path: '/ui/tables/gestionhor',
+					name: 'GestionHoraire Tables',
+					element: <GestionHorTables />,
+					route: PrivateRoute,
+				},
+				{
+					path: '/ui/tables/history',
+					name: 'Historique Tables',
+					element: <HistoriqueTables />,
+					route: PrivateRoute,
+				},
+				{
+					path: '/ui/tables/rendezv',
+					name: 'RendezVous Tables',
+					element: <RendezVTables />,
+					route: PrivateRoute,
+				},
+				{
+					path: '/ui/tables/ressource',
+					name: 'Ressource Tables',
+					element: <RessourceTables />,
+					route: PrivateRoute,
+				}
 			],
 		},
 		{

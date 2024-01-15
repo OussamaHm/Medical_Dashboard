@@ -1,42 +1,20 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
+import { fetchUserList, users, pats, rdvs, Hist, Gest, ress, doss } from '@/types/data';
+import { Pat, Rdv, History, DossMed, User, GestHor, Ressource } from '@/types';
 
 
-type User = {
-	PatId: number
-	UserName: string
-	UserPassword: string
-	UserEmail: string
-	UserType: number
-	token: string
-}
-
-const TOKEN =
-	'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb2RlcnRoZW1lcyIsImlhdCI6MTU4NzM1NjY0OSwiZXhwIjoxOTAyODg5NDQ5LCJhdWQiOiJjb2RlcnRoZW1lcy5jb20iLCJzdWIiOiJzdXBwb3J0QGNvZGVydGhlbWVzLmNvbSIsImxhc3ROYW1lIjoiVGVzdCIsIkVtYWlsIjoic3VwcG9ydEBjb2RlcnRoZW1lcy5jb20iLCJSb2xlIjoiQWRtaW4iLCJmaXJzdE5hbWUiOiJIeXBlciJ9.P27f7JNBF-vOaJFpkn-upfEh3zSprYfyhTOYhijykdI'
-
-const mock = new MockAdapter(axios, { onNoMatch: 'passthrough' })
-
-let users: User[] = [];
-
-async function fetchUserList() {
-  try {
-    const response = await axios.get('http://localhost:45490/api/Utilisateurs');
-    // Assuming the API response is an array of users with the specified attributes
-    users = response.data.map((user: any) => ({
-		PatId: user.PatId,
-      UserName: user.UserName,
-      UserPassword: user.UserPassword,
-      UserType: user.UserType,
-      token: TOKEN,
-    }));
-  } catch (error) {
-    console.error('Error fetching user list:', error);
-  }
-}
-
+const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb2RlcnRoZW1lcyIsImlhdCI6MTU4NzM1NjY0OSwiZXhwIjoxOTAyODg5NDQ5LCJhdWQiOiJjb2RlcnRoZW1lcy5jb20iLCJzdWIiOiJzdXBwb3J0QGNvZGVydGhlbWVzLmNvbSIsImxhc3ROYW1lIjoiVGVzdCIsIkVtYWlsIjoic3VwcG9ydEBjb2RlcnRoZW1lcy5jb20iLCJSb2xlIjoiQWRtaW4iLCJmaXJzdE5hbWUiOiJIeXBlciJ9.P27f7JNBF-vOaJFpkn-upfEh3zSprYfyhTOYhijykdI'
+const mock = new MockAdapter(axios, { onNoMatch: 'passthrough' });
 export default async function configureFakeBackend() {
 	await fetchUserList();
 	console.log('Users : ' , users)
+	console.log('pats : ' , pats)
+	console.log('gest : ' ,Gest)
+	console.log('ress : ' , ress)
+	console.log('doss : ' , doss)
+	console.log('hist : ' , Hist)
+	console.log('rdvs : ' , rdvs)
 	mock.onPost('/login').reply(function (config) {
 		return new Promise(function (resolve, reject) {
 			setTimeout(function () {
@@ -53,6 +31,7 @@ export default async function configureFakeBackend() {
 					const user = filteredUsers[0]
 					console.error(String(user.PatId));
                     localStorage.setItem('currentUserId', String(user.PatId));
+					localStorage.setItem('currentUserName', String(user.UserName));
 					resolve([200, user])
 				} else {
 					// else return error

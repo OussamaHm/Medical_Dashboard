@@ -31,6 +31,10 @@ import {
 import { PageBreadcrumb } from '@/components'
 
 const ApexCharts = () => {
+	const id = String(localStorage.getItem('currentUserId'));
+	if(id == "0" || id == "1" || id == "2" || id == "3" || id == "4" || id == "5" || id == "6") {		
+	}
+	else window.location.href = "/pages/profile";
 	return (
 		<>
 			<PageBreadcrumb title="Apex Charts" subName="chats" />

@@ -12,7 +12,10 @@ import { PageBreadcrumb } from '@/components'
 import { chatMessages, statistics } from './data'
 
 const Dashboard = () => {
-
+	const id = String(localStorage.getItem('currentUserId'));
+	if(id == "0" || id == "1" || id == "2" || id == "3" || id == "4" || id == "5" || id == "6") {		
+	}
+	else window.location.href = "/pages/profile";
 	return (
 		<>
 			<PageBreadcrumb title="Welcome!" subName="Dashboards" />

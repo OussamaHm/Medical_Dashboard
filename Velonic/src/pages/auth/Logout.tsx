@@ -18,7 +18,9 @@ const Logout = () => {
 	}, [removeSession])
 
 	const BottomLink = () => {
+		
 		localStorage.removeItem('currentUserId');
+		localStorage.removeItem('currentUserName');
 		return (
 			<Row>
 				<Col xs={12} className="text-center">

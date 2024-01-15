@@ -452,16 +452,60 @@ const MENU_ITEMS: MenuItemTypes[] = [
 		icon: 'ri-table-line',
 		children: [
 			{
-				key: 'tables-basic',
-				label: 'Basic Tables',
-				url: '/ui/tables/basic-tables',
+				key: 'tables-patient',
+				label: 'Patient Tables',
+				url: '/ui/tables/patients',
 				parentKey: 'tables',
 			},
 			{
-				key: 'tables-data',
-				label: 'Data Tables',
-				url: '/ui/tables/data-tables',
+				key: 'tables-dossiermedical',
+				label: 'DossierMed Tables',
+				url: '/ui/tables/dossiermed',
 				parentKey: 'tables',
+			},
+			{
+				key: 'tables-gestionhoraire',
+				label: 'GestionHoraire Tables',
+				url: '/ui/tables/gestionhor',
+				parentKey: 'tables',
+			},
+			{
+				key: 'tables-historique',
+				label: 'Historique Tables',
+				url: '/ui/tables/history',
+				parentKey: 'tables',
+			},
+			{
+				key: 'tables-rendezv',
+				label: 'RendezV Tables',
+				url: '/ui/tables/rendezv	',
+				parentKey: 'tables',
+			},
+			{
+				key: 'tables-ressources',
+				label: 'Ressources Tables',
+				url: '/ui/tables/ressource	',
+				parentKey: 'tables',
+			}
+		],
+	},
+	{
+		key: 'maps',
+		label: 'Maps',
+		isTitle: false,
+		icon: 'ri-treasure-map-line',
+		children: [
+			{
+				key: 'maps-google-maps',
+				label: 'Google maps',
+				url: '/ui/maps/google-maps',
+				parentKey: 'maps',
+			},
+			{
+				key: 'maps-vector-maps',
+				label: 'Vector maps',
+				url: '/ui/maps/vector-maps',
+				parentKey: 'maps',
 			},
 		],
 	},
@@ -638,12 +682,7 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
 					},
 				],
 			},
-			{
-				key: 'pages-starter',
-				label: 'Starter Page',
-				url: '/pages/starter',
-				parentKey: 'pages',
-			},
+		
 			{
 				key: 'pages-ContactList',
 				label: 'Contact List',
@@ -1031,4 +1070,159 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
 	},
 ]
 
-export { MENU_ITEMS, HORIZONTAL_MENU_ITEMS }
+const MENU_ITEMS2: MenuItemTypes[] = [
+	{
+		key: 'Main',
+		label: 'Main',
+		isTitle: true,
+	},
+	{
+		key: 'pages',
+		label: 'Pages',
+		isTitle: false,
+		icon: 'ri-pages-line',
+		children: [	
+			{
+				key: 'pages-ContactList',
+				label: 'Contact List',
+				url: '/pages/contact-list',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-profile',
+				label: 'Profile',
+				url: '/pages/profile',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-timeline',
+				label: 'Timeline',
+				url: '/pages/timeline',
+				parentKey: 'pages',
+			},
+		]
+	},						
+]
+
+const HORIZONTAL_MENU_ITEMS2: MenuItemTypes[] = [
+	{
+		key: 'pages',
+		icon: 'ri-pages-line',
+		label: 'Pages',
+		isTitle: true,
+		children: [
+			{
+				key: 'auth',
+				label: 'Authentication',
+				isTitle: false,
+				children: [
+					{
+						key: 'auth-login',
+						label: 'Login',
+						url: '/auth/login',
+						parentKey: 'pages',
+					},
+					{
+						key: 'auth-register',
+						label: 'Register',
+						url: '/auth/register',
+						parentKey: 'pages',
+					},
+					{
+						key: 'auth-logout',
+						label: 'Logout',
+						url: '/auth/logout',
+						parentKey: 'pages',
+					},
+					{
+						key: 'auth-forgot-password',
+						label: 'Forgot Password',
+						url: '/auth/forgot-password',
+						parentKey: 'pages',
+					},
+					{
+						key: 'auth-lock-screen',
+						label: 'Lock Screen',
+						url: '/auth/lock-screen',
+						parentKey: 'pages',
+					},
+				],
+			},
+			{
+				key: 'pages-error',
+				label: 'Error',
+				parentKey: 'pages',
+				children: [
+					{
+						key: 'error-404',
+						label: 'Error 404',
+						url: '/pages/error-404',
+						parentKey: 'pages-error',
+					},
+					{
+						key: 'error-404-alt',
+						label: 'Error 404-alt',
+						url: '/pages/error-404-alt',
+						parentKey: 'pages-error',
+					},
+					{
+						key: 'error-500',
+						label: 'Error 500',
+						url: '/pages/error-500',
+						parentKey: 'pages-error',
+					},
+				],
+			},
+			{
+				key: 'pages-starter',
+				label: 'Starter Page',
+				url: '/pages/starter',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-ContactList',
+				label: 'Contact List',
+				url: '/pages/contact-list',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-profile',
+				label: 'Profile',
+				url: '/pages/profile',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-invoice',
+				label: 'Invoice',
+				url: '/pages/invoice',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-faq',
+				label: 'FAQ',
+				url: '/pages/faq',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-pricing',
+				label: 'Pricing',
+				url: '/pages/pricing',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-maintenance',
+				label: 'Maintenance',
+				url: '/pages/maintenance',
+				parentKey: 'pages',
+			},
+			{
+				key: 'pages-timeline',
+				label: 'Timeline',
+				url: '/pages/timeline',
+				parentKey: 'pages',
+			},
+		],
+	},	
+]
+
+export { MENU_ITEMS, HORIZONTAL_MENU_ITEMS,MENU_ITEMS2,HORIZONTAL_MENU_ITEMS2 }

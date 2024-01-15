@@ -170,7 +170,7 @@ type TopbarProps = {
 	navOpen?: boolean
 }
 const Topbar = ({ toggleMenu, navOpen }: TopbarProps) => {
-	const id = String(localStorage.getItem('currentUserId'));
+	const id = String(localStorage.getItem('currentUserName'));
 	const { sideBarType } = useThemeCustomizer()
 	const { width } = useViewport()
 

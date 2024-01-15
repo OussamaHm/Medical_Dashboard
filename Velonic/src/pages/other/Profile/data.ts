@@ -11,40 +11,37 @@ interface ProfileActivity {
 	subName?: string
 	image?: string[]
 }
-
+const name = String(localStorage.getItem('currentUserName'));
 export const profileActivity: ProfileActivity[] = [
 	{
-		time: '5 minutes ago',
-		name: 'John Doe',
-		title: 'Uploaded a photo',
-		image: [img3, img4],
+		time: '',
+		name: name,
+		title: 'The patient underwent a comprehensive health check, revealing normal blood pressure, cholesterol levels, and a healthy heart rate.',
 	},
 	{
-		time: '30 minutes ago',
-		name: 'Lorem',
-		title: 'commented your post.',
+		time: '',
+		name: name,
+		title: 'The medical examination indicates elevated blood sugar levels and mild dehydration.',
 	},
 	{
-		time: '59 minutes ago',
-		name: 'Jessi',
-		title: 'attended a meeting with',
-		subName: 'John Doe.',
+		time: '',
+		name: name,
+		title: 'Routine checkup reveals normal vitals, but a slightly low vitamin D level.',
 	},
 	{
-		time: '5 minutes ago',
-		name: 'John Doe',
-		title: 'Uploaded 2 new photos',
-		image: [img2, img1],
+		time: '',
+		name: name,
+		title: 'The patient reported respiratory symptoms, and the examination confirmed a mild respiratory infection.',
 	},
 	{
-		time: '30 minutes ago',
-		name: 'Lorem',
-		title: 'commented your post.',
+		time: '',
+		name: name,
+		title: 'Prescribed antibiotics, rest, and increased fluid intake. Follow-up scheduled in ten days to monitor recovery progress.',
 	},
 	{
-		time: '59 minutes ago',
-		name: 'Jessi',
-		title: 'attended a meeting with',
-		subName: 'John Doe.',
+		time: '',
+		name: name,
+		title: 'Advised vitamin D supplements, exposure to sunlight, and dietary changes. A follow-up appointment is recommended in one month',
+
 	},
 ]
