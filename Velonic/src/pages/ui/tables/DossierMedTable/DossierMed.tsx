@@ -47,7 +47,7 @@ const sizePerPageList: PageSize[] = [
   },
 ];
 
-const DossTables = () => {
+export const DossTables = () => {
   const [data, setData] = useState<DossMed[]>([]);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const DossTables = () => {
         <Col>
           <Card>
             <Card.Header>
-              <h4 className="header-title">Patients Table</h4>
+              <h4 className="header-title">Dossier Table</h4>
               <p className="text-muted mb-0">A Table allowing search</p>
             </Card.Header>
             <Card.Body>

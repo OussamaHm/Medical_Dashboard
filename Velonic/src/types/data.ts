@@ -51,10 +51,9 @@ try {
 		// Assuming the API response is an array of users with the specified attributes
 	
 		Hist = response.data.map((History  : any) => ({
-		  PatId: History.PatId,
-		  RdvId: History.RdvId ,
-		  DocId: History.DocId ,
-		  Daate: History.Daate,
+      HcId: History.HcId, 
+      RdvId: History.RdvId,
+      Descr: History.Descr,
 		}));
 	  } catch (error) {
 		console.error('Error fetching History  list:', error);

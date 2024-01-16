@@ -13,6 +13,7 @@ export type Pat = {
 	History: string
 	Adress: string
 }
+
 export type Rdv = {
 	PatId: number
 	RdvId: number

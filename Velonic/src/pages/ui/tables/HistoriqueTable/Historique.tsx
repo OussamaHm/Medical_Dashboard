@@ -43,7 +43,7 @@ const sizePerPageList: PageSize[] = [
   },
 ];
 
-const HistoriqueTables = () => {
+export const HistoriqueTables = () => {
   const [data, setData] = useState<History[]>([]);
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const HistoriqueTables = () => {
         <Col>
           <Card>
             <Card.Header>
-              <h4 className="header-title">Patients Table</h4>
+              <h4 className="header-title">Historique Table</h4>
               <p className="text-muted mb-0">A Table allowing search</p>
             </Card.Header>
             <Card.Body>

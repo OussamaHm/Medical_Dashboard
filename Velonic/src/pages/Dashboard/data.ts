@@ -32,7 +32,7 @@ export const statistics: Statistic[] = [
 		variant: 'text-bg-purple',
 	},
 	{
-		title: 'Orders',
+		title: 'Appointments',
 		stats: '753',
 		change: '-5.75%',
 		icon: 'ri-shopping-basket-line',

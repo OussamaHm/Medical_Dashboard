@@ -31,13 +31,10 @@ const Invoice = () => {
 								<div className="col-sm-6">
 									<div className="float-end mt-3">
 										<p>
-											<b>Hello, Thomson</b>
+											<b>Hello, Samir</b>
 										</p>
 										<p className="text-muted fs-13">
-											Please find below a cost-breakdown for the recent work
-											completed. Please make payment at your earliest
-											convenience, and do not hesitate to contact me with any
-											questions.
+										Please make the payment by the due date mentioned above. You can send your payment via check to the address provided or use our online payment portal. Make checks payable to Velonic Medical Center.
 										</p>
 									</div>
 								</div>
@@ -45,7 +42,7 @@ const Invoice = () => {
 									<div className="mt-3 float-sm-end">
 										<p className="fs-13">
 											<strong>Order Date: </strong> &nbsp;&nbsp;&nbsp; Jan 17,
-											2023
+											2024
 										</p>
 										<p className="fs-13">
 											<strong>Order Status: </strong>{' '}
@@ -53,7 +50,7 @@ const Invoice = () => {
 										</p>
 										<p className="fs-13">
 											<strong>Order ID: </strong>{' '}
-											<span className="float-end">#123456</span>
+											<span className="float-end">#38956</span>
 										</p>
 									</div>
 								</div>
@@ -91,8 +88,7 @@ const Invoice = () => {
 											<thead className="border-top border-bottom bg-light-subtle border-light">
 												<tr>
 													<th>#</th>
-													<th>Item</th>
-													<th>Quantity</th>
+													<th>Opperation</th>			
 													<th>Unit Cost</th>
 													<th className="text-end">Total</th>
 												</tr>
@@ -101,32 +97,29 @@ const Invoice = () => {
 												<tr>
 													<td>1</td>
 													<td>
-														<b>Laptop</b> <br />
-														Brand Model VGN-TXN27N/B 11.1" Notebook PC
+														<b>Consultation</b> <br />
+														The consultation service involves a one-on-one session with a medical professional to discuss and assess the patient's health.
 													</td>
-													<td>1</td>
-													<td>$1799.00</td>
-													<td className="text-end">$1799.00</td>
+													<td>$150.00</td>
+													<td className="text-end">$151.00</td>
 												</tr>
 												<tr>
 													<td>2</td>
 													<td>
-														<b>Warranty</b> <br />
-														Two Year Extended Warranty - Parts and Labor
+														<b>Blood Test</b> <br />
+														The blood test is a diagnostic procedure where a sample of the patient's blood is collected and analyzed in a laboratory.
 													</td>
-													<td>3</td>
-													<td>$499.00</td>
-													<td className="text-end">$1497.00</td>
+													<td>$75.00</td>
+													<td className="text-end">$76.55</td>
 												</tr>
 												<tr>
 													<td>3</td>
 													<td>
-														<b>LED</b> <br />
-														80cm (32) HD Ready LED TV
+														<b>X-ray</b> <br />
+														X-ray imaging involves the use of electromagnetic radiation to create images of the inside of the body.
 													</td>
-													<td>2</td>
-													<td>$412.00</td>
-													<td className="text-end">$824.00</td>
+													<td>$120.00</td>
+													<td className="text-end">$125.00</td>
 												</tr>
 											</tbody>
 										</table>
@@ -151,13 +144,13 @@ const Invoice = () => {
 									<div className="float-end mt-3 mt-sm-0">
 										<p>
 											<b>Sub-total:</b>{' '}
-											<span className="float-end">$4120.00</span>
+											<span className="float-end">$465.00</span>
 										</p>
 										<p>
 											<b>VAT (12.5):</b>{' '}
-											<span className="float-end">$515.00</span>
+											<span className="float-end">$4.56</span>
 										</p>
-										<h3>$4635.00 USD</h3>
+										<h3>$471.34 USD</h3>
 									</div>
 									<div className="clearfix" />
 								</div>
